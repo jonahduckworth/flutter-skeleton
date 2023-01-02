@@ -26,7 +26,7 @@ this app is connected to a node.js back end that makes all firebase calls
 - Navigate to the directory where you want to clone the repository.
 - Run the following command, replacing <repo-name> with the name of your fork:
 
-        `git clone https://github.com/<your-username>/<repo-name>.git`
+        git clone https://github.com/<your-username>/<repo-name>.git
 
   This will create a new directory with the name of the repository, and clone the repository files into it.
 
@@ -49,11 +49,11 @@ After creating the Firebase project, click the Flutter icon and follow the promp
 
 If you get the following warning after running `dart pub global activate flutterfire_cli`:
 
-    `Warning: Pub installs executables into $HOME/.pub-cache/bin, which is not on your path.`
+    Warning: Pub installs executables into $HOME/.pub-cache/bin, which is not on your path.
   
 Run the following command:
 
-    `export PATH="$PATH":"$HOME/.pub-cache/bin"`
+    export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 After registering your per-platform apps with Firebase, in the terminal, you are prompted to select the platforms you want the Flutter project to support. Select all platforms and say yes to every prompt.
 
