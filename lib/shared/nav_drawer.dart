@@ -16,26 +16,31 @@ class _NavigationDrawer extends State<NavigationDrawer> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
+    final appBarHeight = AppBar().preferredSize.height;
 
     return Drawer(
-      width: 210,
+      width: 160,
       child: Column(
         children: <Widget>[
+          Container(
+            height: 115,
+            color: Colors.black,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(38, 66, 38, 16),
+              child: Text(
+                'Skeleton',
+                style: textTheme.headline6!.copyWith(color: Colors.white),
+              ),
+            ),
+          ),
+          const Divider(
+            height: 1,
+            thickness: 1,
+          ),
           Expanded(
             child: ListView(
               padding: EdgeInsets.zero,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 40, 16, 16),
-                  child: Text(
-                    'Ref Buddy',
-                    style: textTheme.headline6,
-                  ),
-                ),
-                const Divider(
-                  height: 1,
-                  thickness: 1,
-                ),
                 ListTile(
                   leading: const Icon(Icons.person),
                   title: const Text('Profile'),
