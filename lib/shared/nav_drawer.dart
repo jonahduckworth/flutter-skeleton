@@ -19,43 +19,40 @@ class _NavigationDrawer extends State<NavigationDrawer> {
 
     return Drawer(
       width: 210,
-      child: ListView(
-        padding: EdgeInsets.zero,
+      child: Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 40, 16, 16),
-            child: Text(
-              'Ref Buddy',
-              style: textTheme.headline6,
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 40, 16, 16),
+                  child: Text(
+                    'Ref Buddy',
+                    style: textTheme.headline6,
+                  ),
+                ),
+                const Divider(
+                  height: 1,
+                  thickness: 1,
+                ),
+                ListTile(
+                  leading: const Icon(Icons.person),
+                  title: const Text('Profile'),
+                  selected:
+                      context.watch<NavDrawerProvider>().selectedIndex == 0,
+                  onTap: () {
+                    context.read<NavDrawerProvider>().updateIndex(0);
+                    var route = MaterialPageRoute(
+                      builder: (BuildContext context) => const ProfileScreen(),
+                    );
+                    Navigator.of(context)
+                        .pushAndRemoveUntil(route, (route) => false);
+                  },
+                ),
+              ],
             ),
           ),
-          const Divider(
-            height: 1,
-            thickness: 1,
-          ),
-          ListTile(
-            leading: const Icon(Icons.person),
-            title: const Text('Profile'),
-            selected: context.watch<NavDrawerProvider>().selectedIndex == 0,
-            onTap: () {
-              context.read<NavDrawerProvider>().updateIndex(0);
-              var route = MaterialPageRoute(
-                builder: (BuildContext context) => const ProfileScreen(),
-              );
-              Navigator.of(context).pushAndRemoveUntil(route, (route) => false);
-            },
-          ),
-          const Divider(
-            height: 1,
-            thickness: 1,
-          ),
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'Logout',
-            ),
-          ),
-          const Padding(padding: EdgeInsets.all(140)),
           ListTile(
               leading: const Icon(Icons.logout),
               title: const Text('Logout'),
