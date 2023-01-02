@@ -17,17 +17,17 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  // if (kDebugMode) {
-  //   try {
-  //     FirebaseFirestore.instance.useFirestoreEmulator('localhost', 8080);
-  //     await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
-  //     FirebaseFunctions.instance.useFunctionsEmulator('localhost', 5001);
-  //     FirebaseStorage.instance.useStorageEmulator('localhost', 9199);
-  //   } catch (e) {
-  //     // ignore: avoid_print
-  //     print(e);
-  //   }
-  // }
+  if (kDebugMode) {
+    try {
+      FirebaseFirestore.instance.useFirestoreEmulator('localhost', 8080);
+      await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+      FirebaseFunctions.instance.useFunctionsEmulator('localhost', 5001);
+      FirebaseStorage.instance.useStorageEmulator('localhost', 9199);
+    } catch (e) {
+      // ignore: avoid_print
+      print(e);
+    }
+  }
 
   runApp(MultiProvider(providers: [
     // ChangeNotifierProvider(create: (_) => AdminProvider()),

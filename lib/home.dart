@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
 // import 'package:skeleton/providers/admin_provider.dart';
-import 'package:skeleton/screens/new_user/new_user.dart';
 import 'package:skeleton/screens/login/login.dart';
+import 'package:skeleton/screens/new_user/new_user.dart';
+import 'package:skeleton/screens/profile/profile.dart';
 import 'package:skeleton/services/auth.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -43,7 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
               Map data = snapshot.data;
               // context.read<AdminProvider>().updateAdmin(data['admin']);
               bool exists = data['exists'];
-              print('exists');
 
               return StreamBuilder(
                 stream: AuthService().userStream,
@@ -58,10 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   } else if (snapshot.hasData) {
                     if (exists) {
-                      // return GamesScreen(appBar: getToday());
-                      return const Center(
-                        child: Text("Home"),
-                      );
+                      return const ProfileScreen();
                     } else {
                       return const NewUserScreen();
                     }

@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:skeleton/services/auth.dart';
+import 'package:skeleton/screens/profile/profile.dart';
 import 'package:skeleton/home.dart';
 
 class NewUserScreen extends StatefulWidget {
@@ -58,7 +59,7 @@ class _NewUserScreenState extends State<NewUserScreen> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const HomeScreen(),
+            builder: (context) => const ProfileScreen(),
           ),
         );
       }
@@ -177,11 +178,11 @@ class _NewUserScreenState extends State<NewUserScreen> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _submitForm();
-                    var route = MaterialPageRoute(
-                      builder: (BuildContext context) => const HomeScreen(),
-                    );
-                    Navigator.of(context)
-                        .pushAndRemoveUntil(route, (route) => false);
+                    // var route = MaterialPageRoute(
+                    //   builder: (BuildContext context) => const ProfileScreen(),
+                    // );
+                    // Navigator.of(context)
+                    //     .pushAndRemoveUntil(route, (route) => false);
                   }
                 },
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
