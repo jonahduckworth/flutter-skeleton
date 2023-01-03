@@ -111,9 +111,10 @@ match /databases/{database}/documents {
   
 #### Run Emulator
 
-- Change directory to lib/back_end
+- cd lib/back_end/functions
 - Run: 
     npm install
+- cd /lib/back_end
 - Run: 
     export GOOGLE_APPLICATION_CREDENTIALS='path/to/credentials.json'
 - Run: 
@@ -122,6 +123,6 @@ match /databases/{database}/documents {
 ## Run Flutter App
 
 - Open new terminal window 
-- Change directory to root of Flutter app
+- cd root of Flutter app
 - Run:
     flutter run
