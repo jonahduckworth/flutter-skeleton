@@ -34,7 +34,7 @@ class AuthService {
           await uploadProfilePicture(profilePicture, uid);
 
       final HttpsCallable createUserProfile =
-          functions.httpsCallable('http-onCall-createUserProfile');
+          functions.httpsCallable('createUserProfile');
       await createUserProfile({
         'uid': uid,
         'firstName': firstName,
@@ -74,7 +74,7 @@ class AuthService {
     try {
       final uid = FirebaseAuth.instance.currentUser?.uid;
       final HttpsCallable checkIfUserExists =
-          functions.httpsCallable('http-onCall-checkIfUserExists');
+          functions.httpsCallable('checkIfUserExists');
       var exists = await checkIfUserExists({'uid': uid});
       return exists.data;
     } on FirebaseException catch (e) {
@@ -90,7 +90,7 @@ class AuthService {
   //     {required String email, required String role}) async {
   //   try {
   //     final HttpsCallable setCustomClaimsToUser =
-  //         functions.httpsCallable('http-onCall-setCustomClaimsToUser');
+  //         functions.httpsCallable('setCustomClaimsToUser');
   //     await setCustomClaimsToUser({'role': role, 'email': email});
   //   } on FirebaseException catch (e) {
   //     throw e;
