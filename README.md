@@ -3,6 +3,9 @@
 ```
 boilerplate code giving you the start of a flutter app connected to firebase.
 
+if a user exists in auth, they will be directed to the profile screen after logging in.
+if a user has not logged in before, they will be directed to a create profile screen.
+
 app includes:
 
 - login screen
