@@ -96,3 +96,16 @@ match /databases/{database}/documents {
   <img width="585" alt="Screenshot 2023-01-02 at 2 32 49 PM" src="https://user-images.githubusercontent.com/35585020/210279344-45e6b77f-035b-4ed0-8297-4e9d6ba7a0b5.png">
 
   You do not need to do this, as the Firebase files are already initialized in lib/back_end directory of the repository. You will also be running the back end in an emulated environment, so you do not need to deploy anything.
+
+## Run Emulator
+
+- Change directory to lib/back_end
+- Run: 
+    firebase emulators:start
+    
+## Run Flutter App
+
+- Open new terminal window 
+- Change directory to root of Flutter app
+- Run:
+    flutter run
