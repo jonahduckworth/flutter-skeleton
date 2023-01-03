@@ -1,7 +1,7 @@
 # Flutter Skeleton
 
 ```
-boilerplate code giving you the start of a flutter app connected to firebase containing:
+boilerplate code giving you the start of a flutter app connected to firebase container:
 
 - login screen
 - create profile screen
