@@ -113,16 +113,22 @@ match /databases/{database}/documents {
 
 - cd lib/back_end/functions
 - Run: 
-    npm install
+
+        npm install
+    
 - cd /lib/back_end
 - Run: 
-    export GOOGLE_APPLICATION_CREDENTIALS='path/to/credentials.json'
+
+        export GOOGLE_APPLICATION_CREDENTIALS='path/to/credentials.json'
+    
 - Run: 
-    firebase emulators:start
+
+        firebase emulators:start
     
 ## Run Flutter App
 
 - Open new terminal window 
 - cd root of Flutter app
 - Run:
-    flutter run
+
+        flutter run
