@@ -7,6 +7,7 @@ boilerplate code giving you the start of a flutter app connected to firebase con
 - create profile screen
 - profile screen
 - nav drawer
+- provider state management
 
 this app is connected to a node.js back end that makes all firebase calls
 ```
@@ -92,14 +93,29 @@ match /databases/{database}/documents {
 #### Functions
 - Upgrade plan, if you have not done so already
 - Follow prompts
+- After running the `firebase init` command
+  - Select `Emulators`
+  - Use existing project
+  - Select Firebase project that you just made
+  - Make sure `Authentication` , `Firestore`, `Storage`, and `Functions` are selected
+  - Download emulators
+- You do not need to run `firebase deploy`, because you are running on an emulated environment
 
-  <img width="585" alt="Screenshot 2023-01-02 at 2 32 49 PM" src="https://user-images.githubusercontent.com/35585020/210279344-45e6b77f-035b-4ed0-8297-4e9d6ba7a0b5.png">
-
-  You do not need to do this, as the Firebase files are already initialized in lib/back_end directory of the repository. You will also be running the back end in an emulated environment, so you do not need to deploy anything.
-
-## Run Emulator
+## Get Credentials and Run Emulator
+  
+#### Get Google Credentials
+  - Go to Project Settings in the Firebase Console
+  - Select `Service accounts` tab
+  - Generate new private key
+  - Save key in safe location
+  
+#### Run Emulator
 
 - Change directory to lib/back_end
+- Run: 
+    npm install
+- Run: 
+    export GOOGLE_APPLICATION_CREDENTIALS='path/to/credentials.json'
 - Run: 
     firebase emulators:start
     
